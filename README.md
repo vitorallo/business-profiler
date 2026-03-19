@@ -128,14 +128,13 @@ Reports are saved to `./reports/` as Markdown and PDF.
 
 ## Documentation
 
-See [`docs/`](docs/) for detailed documentation:
+See [`docs/`](docs/):
 
-- [Scripts Reference](docs/scripts.md) — All 15 standalone tools with CLI usage
-- [Skills Guide](docs/skills.md) — How each skill orchestrates the tools
-- [Architecture](docs/architecture.md) — How the plugin is structured
-- [Data Sources](docs/data-sources.md) — Source details, rate limits, caveats
-- [Enhanced Mode](docs/enhanced-mode.md) — Browser-based enrichment for sales-targeting
-- [Troubleshooting](docs/troubleshooting.md) — Common issues and fixes
+- [Use cases](docs/use-cases.md) — How to run threat profiles and sales targeting, with a typical workflow
+- [Skills Guide](docs/skills.md) — What each of the 7 skills does
+- [Enhanced Mode](docs/enhanced-mode.md) — Optional LinkedIn/Crunchbase enrichment via Chrome MCP
+- [Troubleshooting](docs/troubleshooting.md) — Common install and runtime issues
+- [Sample Reports](docs/sample-reports/) — Fictional mockup reports showing the output format
 
 ## Dependencies
 
