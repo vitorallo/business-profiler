@@ -135,6 +135,7 @@ See [`docs/`](docs/) for detailed documentation:
 - [Architecture](docs/architecture.md) — How the plugin is structured
 - [Data Sources](docs/data-sources.md) — Source details, rate limits, caveats
 - [Enhanced Mode](docs/enhanced-mode.md) — Browser-based enrichment for sales-targeting
+- [Troubleshooting](docs/troubleshooting.md) — Common issues and fixes
 
 ## Dependencies
 
