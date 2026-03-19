@@ -120,7 +120,7 @@ python3 "${CLAUDE_SKILL_DIR}/../../scripts/regulatory_analyzer.py" --sector <SEC
 
 6. Run financial estimation (use revenue/employees from Wikidata if available):
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/../../scripts/financial_estimator.py" --sector <SECTOR> [--revenue "<REVENUE>"] [--employees <COUNT>] [--risk-level <LEVEL>] [--incidents <N>] [--compliance]
+python3 "${CLAUDE_SKILL_DIR}/../../scripts/financial_estimator.py" --sector <SECTOR> [--revenue "<REVENUE>"] [--employees <COUNT>] [--risk-level <CRITICAL|HIGH|MEDIUM|LOW>] [--incidents <N>] [--compliance]
 ```
 
 7. If tech_stack_detector found technologies, run CISA KEV matching against them:

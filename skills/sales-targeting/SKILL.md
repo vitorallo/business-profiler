@@ -138,7 +138,7 @@ python3 "${CLAUDE_SKILL_DIR}/../../scripts/wikidata_search.py" --company "<COMPA
 ```
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/../../scripts/financial_estimator.py" --sector <SECTOR> [--revenue "<REVENUE>"] [--employees <COUNT>] [--risk-level <LEVEL>] [--compliance]
+python3 "${CLAUDE_SKILL_DIR}/../../scripts/financial_estimator.py" --sector <SECTOR> [--revenue "<REVENUE>"] [--employees <COUNT>] [--risk-level <CRITICAL|HIGH|MEDIUM|LOW>] [--compliance]
 ```
 
 ```bash
