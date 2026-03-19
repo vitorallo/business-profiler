@@ -1,0 +1,86 @@
+{
+  "Energy": {
+    "primary_actors": ["Sandworm Team", "Dragonfly", "TEMP.Veles", "APT33", "APT34", "Lazarus Group", "Volt Typhoon", "CL-STA-0043"],
+    "ransomware_groups": ["BlackCat/ALPHV", "LockBit", "Akira", "Royal", "Play"],
+    "ics_actors": ["Sandworm Team", "Dragonfly", "TEMP.Veles", "Volt Typhoon", "CHERNOVITE"],
+    "key_campaigns": ["BlackEnergy", "Industroyer", "TRITON/TRISIS", "Havex", "PIPEDREAM/INCONTROLLER"]
+  },
+  "Manufacturing": {
+    "primary_actors": ["APT41", "Dragonfly", "TEMP.Veles", "Sandworm Team", "Lazarus Group", "menuPass", "Volt Typhoon", "APT33"],
+    "ransomware_groups": ["LockBit", "Akira", "BlackCat/ALPHV", "Cl0p", "Play", "Royal"],
+    "ics_actors": ["Sandworm Team", "Dragonfly", "TEMP.Veles", "Volt Typhoon"],
+    "key_campaigns": ["Operation Cloud Hopper", "PIPEDREAM", "Havex"]
+  },
+  "Technology": {
+    "primary_actors": ["APT41", "APT29", "APT28", "Lazarus Group", "Kimsuky", "Mustang Panda", "Scattered Spider", "menuPass"],
+    "ransomware_groups": ["LockBit", "BlackCat/ALPHV", "Scattered Spider", "Akira", "Play"],
+    "ics_actors": [],
+    "key_campaigns": ["SolarWinds (APT29)", "Operation Cloud Hopper (menuPass)", "Operation Aurora"]
+  },
+  "Financial Services": {
+    "primary_actors": ["Lazarus Group", "FIN7", "Carbanak", "APT38", "TA505", "Scattered Spider", "APT41", "Silence"],
+    "ransomware_groups": ["LockBit", "BlackCat/ALPHV", "Cl0p", "Royal", "Akira"],
+    "ics_actors": [],
+    "key_campaigns": ["Bangladesh Bank Heist (Lazarus)", "Carbanak campaigns", "MOVEit (Cl0p)"]
+  },
+  "Government": {
+    "primary_actors": ["APT29", "APT28", "Turla", "Kimsuky", "Sandworm Team", "Mustang Panda", "Gamaredon Group", "Volt Typhoon"],
+    "ransomware_groups": ["LockBit", "Akira", "Royal", "Play"],
+    "ics_actors": ["Sandworm Team", "Volt Typhoon"],
+    "key_campaigns": ["SolarWinds (APT29)", "NotPetya (Sandworm)", "Gamaredon campaigns"]
+  },
+  "Healthcare": {
+    "primary_actors": ["APT41", "Lazarus Group", "FIN11", "APT18", "Deep Panda", "Mustang Panda", "TA505"],
+    "ransomware_groups": ["LockBit", "BlackCat/ALPHV", "Cl0p", "Royal", "Rhysida"],
+    "ics_actors": [],
+    "key_campaigns": ["Anthem breach (Deep Panda)", "Change Healthcare (BlackCat)", "NHS WannaCry"]
+  },
+  "Telecommunications": {
+    "primary_actors": ["APT41", "Mustang Panda", "Turla", "Sandworm Team", "Lazarus Group", "APT29", "Volt Typhoon", "Salt Typhoon"],
+    "ransomware_groups": ["LockBit", "BlackCat/ALPHV", "Akira"],
+    "ics_actors": ["Sandworm Team"],
+    "key_campaigns": ["Salt Typhoon telco intrusions", "Operation Soft Cell", "LightBasin"]
+  },
+  "Defense": {
+    "primary_actors": ["APT29", "APT28", "Turla", "Lazarus Group", "Kimsuky", "Mustang Panda", "APT33", "Gamaredon Group"],
+    "ransomware_groups": ["LockBit", "Akira"],
+    "ics_actors": ["Sandworm Team"],
+    "key_campaigns": ["SolarWinds", "Turla campaigns", "APT33 aerospace targeting"]
+  },
+  "Retail": {
+    "primary_actors": ["FIN7", "Carbanak", "FIN6", "Scattered Spider", "Lazarus Group", "TA505", "APT41"],
+    "ransomware_groups": ["LockBit", "BlackCat/ALPHV", "Scattered Spider", "Akira", "Play"],
+    "ics_actors": [],
+    "key_campaigns": ["FIN7 POS campaigns", "Carbanak retail targeting"]
+  },
+  "Transportation": {
+    "primary_actors": ["APT41", "Sandworm Team", "Volt Typhoon", "APT28", "Lazarus Group", "menuPass", "Dragonfly"],
+    "ransomware_groups": ["LockBit", "Akira", "Play", "Royal"],
+    "ics_actors": ["Sandworm Team", "Dragonfly", "Volt Typhoon"],
+    "key_campaigns": ["NotPetya (Maersk)", "Colonial Pipeline", "Volt Typhoon prepositioning"]
+  },
+  "Education": {
+    "primary_actors": ["APT28", "Kimsuky", "Mustang Panda", "APT29", "Lazarus Group", "TA505"],
+    "ransomware_groups": ["LockBit", "Akira", "Vice Society", "Rhysida"],
+    "ics_actors": [],
+    "key_campaigns": ["Kimsuky academic targeting", "Vice Society education campaigns"]
+  },
+  "Media": {
+    "primary_actors": ["APT28", "APT29", "Kimsuky", "Lazarus Group", "Mustang Panda", "Turla"],
+    "ransomware_groups": ["LockBit", "Akira", "Play"],
+    "ics_actors": [],
+    "key_campaigns": ["APT28 media targeting", "Lazarus journalist targeting"]
+  },
+  "Aerospace": {
+    "primary_actors": ["APT41", "APT33", "Lazarus Group", "menuPass", "APT29", "Turla", "Kimsuky"],
+    "ransomware_groups": ["LockBit", "BlackCat/ALPHV", "Akira"],
+    "ics_actors": [],
+    "key_campaigns": ["Operation Cloud Hopper", "APT33 aerospace campaigns", "Lazarus Operation DreamJob"]
+  },
+  "Pharmaceuticals": {
+    "primary_actors": ["APT41", "APT29", "Lazarus Group", "Deep Panda", "APT18", "Mustang Panda"],
+    "ransomware_groups": ["LockBit", "BlackCat/ALPHV", "Cl0p", "Akira"],
+    "ics_actors": [],
+    "key_campaigns": ["COVID-19 vaccine espionage (APT29)", "Deep Panda pharma targeting"]
+  }
+}

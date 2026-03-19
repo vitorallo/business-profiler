@@ -1,0 +1,11 @@
+{
+  "name": "business-profiler",
+  "version": "1.0.0",
+  "description": "Cybersecurity threat intelligence, attack surface assessment, and strategic sales targeting toolkit. Generates threat profiles, attack surface reports, threat actor analysis, OT/ICS assessments, and sales-ready account targeting reports with service opportunity mapping for cybersecurity firms and KYC profiling.",
+  "author": {
+    "name": "PEACH STUDIO",
+    "url": "https://www.peachstudio.be"
+  },
+  "homepage": "https://www.peachstudio.be",
+  "skills": "./skills/"
+}
