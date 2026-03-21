@@ -166,6 +166,7 @@ Read file: ${CLAUDE_SKILL_DIR}/references/methodology.md
 - Profile 5-8 threat actors with full TTP tables
 - Provide risk scoring with justification
 - Recommendations must be specific, actionable, prioritized (7/30/90 day)
+- **Use `.dashboard-row`, `.metric-card`, and `.risk-badge` HTML classes** in the Executive Summary for dashboard-style visuals (risk level badge, attack surface stats). See the report template for examples. Do not use these classes for every table — only for headline metrics.
 - Cite MITRE ATT&CK technique IDs throughout
 - Include source URLs for all external intelligence
 - Target: 15-20 pages when rendered as PDF

@@ -12,9 +12,26 @@
 
 ## Executive Summary
 
-**Account Status:** KEY ACCOUNT | **Risk Assessment:** HIGH
-**Estimated 3-Year Revenue Opportunity:** EUR 620K — EUR 1.1M
-**Urgency:** HIGH — NIS2 enforcement active + CRA deadline approaching + confirmed vendor breach
+<div class="score-section">
+  <p class="score-title">Account Classification</p>
+  <p class="score-value">KEY ACCOUNT</p>
+  <p class="score-subtitle">3-year opportunity EUR 720K — 1.24M · converging threat, regulatory, and financial drivers</p>
+</div>
+
+<div class="dashboard-row">
+  <div class="metric-card">
+    <p class="metric-value">HIGH</p>
+    <p class="metric-label">Risk Assessment</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">EUR 720K — 1.24M</p>
+    <p class="metric-label">3-Year Revenue Opportunity</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">HIGH</p>
+    <p class="metric-label">Urgency</p>
+  </div>
+</div>
 
 Nexagen GmbH is a strong account opportunity driven by three converging pressures: a recent vendor portal breach exposing gaps in third-party risk management, imminent CRA compliance obligations for their PLC products, and active nation-state targeting of German manufacturers by APT28 and Sandworm Team. With EUR 380M revenue and an estimated IT budget of EUR 15-19M, Nexagen has the capacity for a multi-year engagement but will require clear ROI justification typical of Mittelstand companies.
 
@@ -35,6 +52,21 @@ The confirmed February 2025 breach, 187 discovered subdomains including OT-adjac
 ## PART I: THE OPPORTUNITY
 
 ### 1.1 Financial Intelligence
+
+<div class="dashboard-row">
+  <div class="metric-card">
+    <p class="metric-value">EUR 380M</p>
+    <p class="metric-label">Annual Revenue</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">EUR 15-19M</p>
+    <p class="metric-label">IT Spend (Est.)</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">EUR 1.5-2.8M</p>
+    <p class="metric-label">Security Budget (Est.)</p>
+  </div>
+</div>
 
 | Metric | Value | Source |
 |--------|-------|--------|
@@ -145,17 +177,20 @@ The CRA deadline in 6 months is the strongest urgency driver. Nexagen's PLC prod
 | 1 | External Penetration Test | 187 subdomains, 12 staging envs | 10K — 20K | Year 1 | P2 |
 | 31 | IR Retainer | Post-breach readiness | 20K — 50K/yr | Year 1 | P2 |
 | 20 | Managed ASM | Continuous attack surface monitoring | 30K — 60K/yr | Year 2 | P2 |
-| 35 | Security Awareness Training | Credential stuffing success indicates weak hygiene | 8K — 20K/yr | Year 2 | P3 |
+| 12 | Email Security Gateway | DMARC p=none; spearphishing history | 10K — 25K | Year 1 | P2 |
+| 33 | Digital Forensics | Feb 2025 breach scope still unclear | 15K — 40K | Year 1 | P2 |
+| 35 | Security Awareness Training | Credential stuffing success; 2 phishing clicks Nov 2024 | 8K — 20K/yr | Year 2 | P3 |
 | 37 | Tabletop Exercise | NIS2 requirement; test incident response | 5K — 15K | Year 2 | P3 |
+| 9 | EDR/XDR Deployment | No endpoint visibility on OT-adjacent systems | 15K — 35K + licensing | Year 2 | P3 |
 
 **Revenue Opportunity:**
 
 | Year | Focus | Estimated Revenue (EUR) |
 |------|-------|------------------------|
-| Year 1 | Assessments + compliance (OT, NIS2, CRA, TPRM, pentest, IR retainer) | 250K — 410K |
-| Year 2 | Managed services + expansion (ASM, awareness, tabletop, follow-up assessments) | 200K — 350K |
-| Year 3 | Recurring services + maturity reviews | 170K — 300K |
-| **3-Year Total** | | **EUR 620K — 1.06M** |
+| Year 1 | Assessments + compliance + quick wins (OT, NIS2, CRA, TPRM, pentest, IR retainer, email security, forensics) | 310K — 520K |
+| Year 2 | Managed services + expansion (ASM, EDR, awareness, tabletop, follow-up assessments) | 230K — 400K |
+| Year 3 | Recurring services + maturity reviews | 180K — 320K |
+| **3-Year Total** | | **EUR 720K — 1.24M** |
 
 **Account Classification: KEY ACCOUNT** (3-year opportunity 500K — 2M)
 
@@ -225,4 +260,4 @@ The CRA deadline in 6 months is the strongest urgency driver. Nexagen's PLC prod
 
 ---
 
-*Made with love by an AI agent · a skill developed by PEACH STUDIO*
+*Made with love by an AI agent · a skill developed by [PEACH STUDIO](http://peachstudio.be)*

@@ -293,10 +293,19 @@ hr {
     margin: 24pt 0;
 }
 
-.risk-critical { color: #dc2626; font-weight: bold; }
-.risk-high { color: #ea580c; font-weight: bold; }
-.risk-medium { color: #d97706; font-weight: bold; }
-.risk-low { color: #16a34a; font-weight: bold; }
+.dashboard-row { display: flex; gap: 12pt; margin: 16pt 0; flex-wrap: wrap; }
+.metric-card { flex: 1; min-width: 120pt; background: #FFF5F0; border-radius: 6pt; padding: 12pt 14pt; border-left: 4pt solid #E86B3F; }
+.metric-card .metric-value { font-size: 20pt; font-weight: 700; color: #2F2218; margin: 0; line-height: 1.2; }
+.metric-card .metric-label { font-size: 8pt; color: #C85A34; text-transform: uppercase; letter-spacing: 0.5pt; margin: 4pt 0 0 0; }
+.risk-badge { display: inline-block; padding: 2pt 10pt; border-radius: 3pt; font-weight: 700; font-size: 9pt; }
+.risk-critical { background: #dc2626; color: white; font-weight: bold; }
+.risk-high { background: #E86B3F; color: white; font-weight: bold; }
+.risk-medium { background: #d97706; color: white; font-weight: bold; }
+.risk-low { background: #16a34a; color: white; font-weight: bold; }
+.score-section { background: linear-gradient(135deg, #2F2218, #4a3020); color: white; padding: 10pt 14pt; border-radius: 6pt; margin: 12pt 0; }
+.score-section .score-title { font-size: 8pt; opacity: 0.7; margin: 0 0 2pt 0; text-transform: uppercase; letter-spacing: 0.5pt; }
+.score-section .score-value { font-size: 16pt; font-weight: 700; margin: 0; line-height: 1.2; }
+.score-section .score-subtitle { font-size: 8pt; opacity: 0.6; margin: 4pt 0 0 0; }
 
 .page-break {
     page-break-before: always;
@@ -374,9 +383,9 @@ def markdown_to_pdf(
 
         footer_html = f"""<div class="page-footer">
     <p>Made with love by an AI agent · a skill developed by</p>
-    {logo_svg}
+    <a href="http://peachstudio.be">{logo_svg}</a>
 </div>""" if logo_svg else """<div class="page-footer">
-    <p>Made with love by an AI agent · a skill developed by PEACH STUDIO</p>
+    <p>Made with love by an AI agent · a skill developed by <a href="http://peachstudio.be">PEACH STUDIO</a></p>
 </div>"""
 
         html_doc = f"""<!DOCTYPE html>

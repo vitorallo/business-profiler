@@ -20,10 +20,29 @@ Use this structure for the strategic targeting report. Every section is required
 
 ## Executive Summary
 
-```
-**Account Status:** [STRATEGIC PARTNER/KEY ACCOUNT/TARGET ACCOUNT] | **Risk Assessment:** [CRITICAL/HIGH/MEDIUM]
-**Estimated 3-Year Revenue Opportunity:** [Currency][X]M - [Currency][Y]M
-**Urgency:** [IMMEDIATE/HIGH/MEDIUM] - [Key driver]
+Use dashboard-style HTML for the account classification and key metrics:
+
+```html
+<div class="score-section">
+  <p class="score-title">Account Classification</p>
+  <p class="score-value">[STRATEGIC PARTNER / KEY ACCOUNT / TARGET ACCOUNT]</p>
+  <p class="score-subtitle">[One-line justification]</p>
+</div>
+
+<div class="dashboard-row">
+  <div class="metric-card">
+    <p class="metric-value">[CRITICAL/HIGH/MEDIUM]</p>
+    <p class="metric-label">Risk Assessment</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">[Currency][X]M — [Y]M</p>
+    <p class="metric-label">3-Year Revenue Opportunity</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">[IMMEDIATE/HIGH/MEDIUM]</p>
+    <p class="metric-label">Urgency</p>
+  </div>
+</div>
 ```
 
 2-3 paragraph summary of why this is a strategic opportunity. Lead with the convergence of financial capacity, threat severity, and regulatory pressure.
@@ -44,7 +63,26 @@ Use this structure for the strategic targeting report. Every section is required
 
 ### 1.1 Financial Intelligence
 
-Table with key financial metrics:
+Use metric cards for headline financial figures, then a table for full detail:
+
+```html
+<div class="dashboard-row">
+  <div class="metric-card">
+    <p class="metric-value">[Revenue]</p>
+    <p class="metric-label">Annual Revenue</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">[IT Spend]</p>
+    <p class="metric-label">IT Spend (Est.)</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">[Security Budget]</p>
+    <p class="metric-label">Security Budget (Est.)</p>
+  </div>
+</div>
+```
+
+Full financial detail table:
 | Metric | Value | Source |
 |--------|-------|--------|
 | Annual Revenue | | |
@@ -299,4 +337,4 @@ Populate with actual recon data. Use red for critical exposures, blue for infras
 
 ---
 
-*Made with love by an AI agent · a skill developed by PEACH STUDIO*
+*Made with love by an AI agent · a skill developed by [PEACH STUDIO](http://peachstudio.be)*

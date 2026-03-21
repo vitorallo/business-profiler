@@ -21,6 +21,27 @@ Use this structure for the full threat intelligence report. Every section is req
 
 ## Executive Summary
 
+Use a risk badge for the overall risk level and metric cards for attack surface stats:
+
+```html
+<p>Overall Risk Level: <span class="risk-badge risk-[critical/high/medium/low]">[RISK LEVEL]</span></p>
+
+<div class="dashboard-row">
+  <div class="metric-card">
+    <p class="metric-value">[N]</p>
+    <p class="metric-label">Subdomains Discovered</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">[N]</p>
+    <p class="metric-label">Cloud Providers</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">[N]</p>
+    <p class="metric-label">Known Breaches</p>
+  </div>
+</div>
+```
+
 3-5 bullet points of the most critical findings. Include:
 - Confirmed breaches/incidents
 - Key threat actors targeting the organization
@@ -202,4 +223,4 @@ All sources used with URLs and access dates.
 
 ---
 
-*Made with love by an AI agent · a skill developed by PEACH STUDIO*
+*Made with love by an AI agent · a skill developed by [PEACH STUDIO](http://peachstudio.be)*

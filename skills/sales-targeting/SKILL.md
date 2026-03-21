@@ -251,6 +251,7 @@ Generate the full 6-part Strategic Account Targeting Report following the templa
 - Regulatory deadlines must include specific dates, not just "upcoming"
 - Include intelligence gaps section documenting what could not be verified
 - All claims must cite sources (script output, WebSearch results, or browser-gathered data)
+- **Use `.dashboard-row`, `.metric-card`, `.risk-badge`, and `.score-section` HTML classes** in the Executive Summary and Financial Intelligence sections for dashboard-style visuals. See the report template for examples. Do not use these classes for every table — only for headline metrics and key scores.
 - **Use Mermaid code blocks** (not ASCII art, not inline SVG) for all visual elements: org charts (Appendix C), attack surface diagrams (Appendix D), and regulatory timelines (Part III). Write them as ````mermaid` fenced code blocks in the markdown — the PDF generator handles rendering. **NEVER generate raw `<svg>` tags** — WeasyPrint cannot render text inside SVG foreignObject elements. Follow the Mermaid examples in the report template. Use `style` directives for color coding (red for critical/targets, blue for infrastructure, green for opportunities).
 - If browser tools were NOT used, include a note in the Approach section about limited contact intelligence
 

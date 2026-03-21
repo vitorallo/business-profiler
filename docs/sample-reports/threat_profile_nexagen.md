@@ -11,14 +11,33 @@
 
 ## 1. Executive Summary
 
+<p>Overall Risk Level: <span class="risk-badge risk-high">HIGH</span></p>
+
+<div class="dashboard-row">
+  <div class="metric-card">
+    <p class="metric-value">187</p>
+    <p class="metric-label">Subdomains Discovered</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">2</p>
+    <p class="metric-label">Cloud Providers</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">1</p>
+    <p class="metric-label">Confirmed Breaches</p>
+  </div>
+  <div class="metric-card">
+    <p class="metric-value">7</p>
+    <p class="metric-label">CISA KEV Matches</p>
+  </div>
+</div>
+
 | Attribute | Assessment |
 |-----------|------------|
-| **Overall Risk Level** | **HIGH** |
 | **Primary Threat** | State-sponsored espionage and ransomware targeting German manufacturing |
 | **Secondary Threat** | Supply chain compromise via exposed vendor portals |
 | **Email Security Posture** | **MODERATE — DMARC set to none (not enforced)** |
 | **Attack Surface** | **ELEVATED — 187 subdomains, exposed staging environments, legacy ERP interfaces** |
-| **Known Breaches** | 1 confirmed (vendor portal breach, Feb 2025) |
 
 Nexagen GmbH is a mid-size German industrial automation manufacturer with 2,400 employees and approximately EUR 380M annual revenue. The company designs and produces programmable logic controllers (PLCs) and SCADA interface modules for automotive and chemical plants across Europe.
 
@@ -81,29 +100,72 @@ As a manufacturer of industrial control system components, Nexagen sits at a sen
 ### Notable Subdomains
 
 **Development/Staging (12 exposed):**
-- erp-test.nexagen.de — SAP test instance
-- plc-dev.nexagen.de — PLC firmware development portal
-- staging.nexagen.de — WordPress staging
-- api-sandbox.nexagen.de — REST API sandbox with test data
+- erp-test.nexagen.de — SAP test instance (185.72.x.x, Hetzner)
+- plc-dev.nexagen.de — PLC firmware development portal (185.72.x.x, Hetzner)
+- staging.nexagen.de — WordPress staging with debug mode enabled
+- api-sandbox.nexagen.de — REST API sandbox with test data, no auth required
+- qa-erp.nexagen.de — SAP QA environment
+- ci.nexagen.de — Jenkins CI (version 2.387, 3 CISA KEV matches)
 
 **OT-Adjacent:**
-- scada-gw.nexagen.de — SCADA gateway interface
-- plc-update.nexagen.de — PLC firmware update server
-- edge-mgmt.nexagen.de — Industrial edge device management
+- scada-gw.nexagen.de — SCADA gateway interface (Modbus TCP proxy, port 502 open)
+- plc-update.nexagen.de — PLC firmware update server (unsigned firmware packages)
+- edge-mgmt.nexagen.de — Industrial edge device management (default credentials documented in public manual)
+- opc-bridge.nexagen.de — OPC-UA bridge between plant floor and corporate MES
 
 **Vendor/Partner:**
 - partners.nexagen.de — Vendor collaboration portal (breached Feb 2025)
-- supplier-portal.nexagen.de — Supply chain document exchange
+- supplier-portal.nexagen.de — Supply chain document exchange (TLSv1.2, weak cipher suite)
+
+**VPN/Remote Access:**
+- vpn.nexagen.de — GlobalProtect VPN gateway
+- remote.nexagen.de — Citrix StoreFront (version not determined)
+
+### Email Security Detail
+
+| Record | Value | Grade |
+|--------|-------|-------|
+| **SPF** | `v=spf1 include:spf.protection.outlook.com include:_spf.hetzner.com -all` | PASS |
+| **DMARC** | `v=DMARC1; p=none; rua=mailto:dmarc@nexagen.de` | FAIL — policy not enforced |
+| **DKIM** | Selector `s1` (Microsoft 365), `hetzner` (mail relay) | PARTIAL — no third-party signing |
+| **MX** | nexagen-de.mail.protection.outlook.com (pri 10) | M365 confirmed |
+
+The DMARC `p=none` policy means spoofed emails from @nexagen.de are delivered without quarantine or rejection. Combined with the SPF include for Hetzner (broad IP range), an attacker can spoof Nexagen emails to vendors and customers with high deliverability.
+
+### CISA KEV Matches
+
+| CVE | Product | Vulnerability | Date Added | Ransomware Use |
+|-----|---------|--------------|------------|----------------|
+| CVE-2024-7971 | nginx | HTTP/2 rapid reset DoS | 2024-08-15 | No |
+| CVE-2023-44487 | nginx | HTTP/2 rapid reset | 2023-10-10 | No |
+| CVE-2024-4577 | PHP 8.1 | CGI argument injection (RCE) | 2024-06-13 | Yes — TellYouThePass |
+| CVE-2023-3824 | PHP 8.1 | Buffer overflow | 2023-09-20 | No |
+| CVE-2024-2961 | PHP (glibc) | iconv buffer overflow | 2024-05-30 | No |
+| CVE-2024-2194 | WordPress | Stored XSS via comments | 2024-04-10 | No |
+| CVE-2023-2982 | WordPress | Auth bypass via social login plugin | 2023-08-15 | No |
+
+CVE-2024-4577 (PHP CGI argument injection) is the most critical — it allows unauthenticated remote code execution and is actively used by the TellYouThePass ransomware family. Nexagen's staging environments running PHP 8.1 are directly exposed.
 
 ---
 
 ## 4. Threat Intelligence
 
+### Breach Intelligence (XposedOrNot)
+
+| Breach | Date | Exposed Data Types | Records |
+|--------|------|--------------------|---------|
+| Collection #1 (aggregated) | Jan 2019 | Email addresses, passwords | 12 nexagen.de accounts found |
+| Cit0day dump | Nov 2020 | Email, plaintext passwords | 3 nexagen.de accounts found |
+
+15 Nexagen employee email/password combinations appear in known credential dumps. These are the likely source material for the February 2025 credential stuffing attack on the partner portal.
+
 ### Confirmed Security Incidents
 
 | Date | Incident | Type | Actor | Impact |
 |------|----------|------|-------|--------|
-| Feb 2025 | partners.nexagen.de credential stuffing | Unauthorized Access | Unknown | 340 vendor accounts compromised; document repository accessed |
+| Feb 2025 | partners.nexagen.de credential stuffing | Unauthorized Access | Unknown | 340 vendor accounts compromised; NDA documents and technical drawings accessed |
+| Nov 2024 | Spearphishing campaign targeting Nexagen procurement | Phishing | Unknown | 2 employees clicked; no confirmed compromise; reported to BSI |
+| Aug 2023 | DDoS on nexagen.de during trade show | Disruption | Unknown | 4-hour outage of corporate website and customer portal |
 
 ### Threat Actor Profiles
 
@@ -160,6 +222,30 @@ As a manufacturer of industrial control system components, Nexagen sits at a sen
 | Impact | T1486 | Data Encrypted for Impact |
 | Exfiltration | T1567.002 | Exfiltration to Cloud Storage |
 | Defense Evasion | T1562.001 | Disable or Modify Tools |
+
+#### APT41 (Wicked Panda)
+
+| Attribute | Detail |
+|-----------|--------|
+| **Attribution** | China — MSS-affiliated, dual espionage/cybercrime |
+| **Motivation** | IP theft + financial gain |
+| **Relevance** | **MEDIUM** — Expanded to European manufacturing in 2024-2025 |
+
+**Key TTPs:**
+
+| Tactic | Technique ID | Technique Name |
+|--------|-------------|----------------|
+| Initial Access | T1195.002 | Compromise Software Supply Chain |
+| Initial Access | T1190 | Exploit Public-Facing Application |
+| Persistence | T1505.003 | Web Shell |
+| Credential Access | T1003.001 | LSASS Memory |
+| Exfiltration | T1041 | Exfiltration Over C2 Channel |
+
+### Sector Threat Context: German Manufacturing (2025-2026)
+
+German manufacturing (Mittelstand in particular) faces a difficult period. The BSI's 2025 annual report flagged a 41% YoY increase in attacks on mid-size manufacturers. Ransomware groups have shifted focus from healthcare to manufacturing, which is now the #2 most targeted sector globally. The convergence of IT and OT networks in Industry 4.0 adoption has expanded attack surfaces faster than security teams can keep up.
+
+Three factors make Nexagen's position worse than the sector average: their products are embedded in customer OT environments (supply chain risk multiplier), their own production floor runs the PLCs they build (self-targeting), and the February 2025 breach suggests existing controls are inadequate.
 
 ### Threat Actor Targeting Matrix
 
@@ -251,4 +337,4 @@ Nexagen faces elevated risk from ransomware groups targeting manufacturing, stat
 
 ---
 
-*Made with love by an AI agent · a skill developed by PEACH STUDIO*
+*Made with love by an AI agent · a skill developed by [PEACH STUDIO](http://peachstudio.be)*
